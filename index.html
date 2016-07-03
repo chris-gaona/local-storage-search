@@ -42,17 +42,18 @@
       }
     }
 
-    function saveSearchString(string) {
+    function saveSearchString(str) {
       var searches = getRecentSearches();
-      if (!str || searches.indexOf(str) > -1} {
+      if (!str || searches.indexOf(str) > -1) {
         return false;
       }
       searches.push(str);
-      localStorage.setItem('recentSearches', JSON.stringify(str));
+      localStorage.setItem('recentSearches', JSON.stringify(searches));
       return true;
     }
 
     function removeSearches() {
+      localStorage.removeItem('recentSearches');
     }
 
     // Create an li, given string contents, append to the supplied ul
