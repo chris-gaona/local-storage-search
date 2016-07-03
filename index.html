@@ -34,6 +34,12 @@
     }
 
     function getRecentSearches() {
+      var searches = localStorage.getItem('recentSearches');
+      if (searches) {
+        return JSON.parse(searches);
+      } else {
+        return [];
+      }
     }
 
     function saveSearchString() {
