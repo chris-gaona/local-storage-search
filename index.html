@@ -42,7 +42,14 @@
       }
     }
 
-    function saveSearchString() {
+    function saveSearchString(string) {
+      var searches = getRecentSearches();
+      if (!str || searches.indexOf(str) > -1} {
+        return false;
+      }
+      searches.push(str);
+      localStorage.setItem('recentSearches', JSON.stringify(str));
+      return true;
     }
 
     function removeSearches() {
