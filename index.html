@@ -83,6 +83,7 @@
 
         // Set event handlers
         searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
           var searchString = searchBar.value;
           if (saveSearchString(searchString)) {
             appendListItem(recentSearchList, searchString);
