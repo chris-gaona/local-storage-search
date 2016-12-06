@@ -4,7 +4,10 @@ var app = express();
 var rootpath = path.normalize(__dirname + '/');
 
 app.use(express.static(rootpath));
-app.listen(3000, function(err) {
+
+var port = process.env.PORT || 3000;
+
+app.listen(port, function(err) {
   if (err) console.error(err);
   console.log('server running');
-})
+});
